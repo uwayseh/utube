@@ -3,39 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" href="styling.css">
+    <style>
+        /* Ensure iframe and images are responsive */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9; /* Keeps proper aspect ratio */
+        }
+
+        .arrow, a img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
+
     <a href="./index.html">
         <img src="https://static.vecteezy.com/system/resources/previews/006/991/685/non_2x/arrow-back-icon-which-is-suitable-for-commercial-work-and-easily-modify-or-edit-it-vector.jpg" alt="home button" class="arrow">
     </a>
+
     <div class="iframe-container">
         <!-- YouTube iframe video -->
-        <iframe id="video" width="1200" height="800" 
+        <iframe id="video" 
             src="https://www.youtube.com/embed/mQwgJ2-9lVI?autoplay=1&rel=1&modestbranding=1" 
             frameborder="0" 
             allow="autoplay; fullscreen">
         </iframe>
-    
+
         <!-- Custom Play Button -->
-        <button class="play-button" onclick="playVideo()"></button>
+        <button class="play-button" onclick="playVideo()">Play</button>
     </div>
-    </iframe>
+
+    <a href="videos.html">
+        <img src="https://tadabburbooks.com/cdn/shop/products/Omar_HanaSayAlhamdulillah-SamplePage-1.jpg?v=1653596752" alt="Video Thumbnail"> 
+    </a> 
+
     <script>
         // Function to play the video when the custom play button is clicked
         function playVideo() {
             const iframe = document.getElementById("video");
-            const iframeSrc = iframe.src;
+            let iframeSrc = iframe.src;
     
             // Reset the iframe's src to trigger autoplay
-            iframe.src = iframeSrc.replace("autoplay=1", "autoplay=1"); // Ensure autoplay is triggered
+            iframe.src = iframeSrc.replace("autoplay=0", "autoplay=1");
         }
+
+        // Adjust iframe size dynamically based on screen width
+        function adjustIframe() {
+            const iframe = document.getElementById("video");
+            if (window.innerWidth < 768) {
+                iframe.style.height = "300px";
+            } else {
+                iframe.style.height = "600px";
+            }
+        }
+
+        window.addEventListener("resize", adjustIframe);
+        window.addEventListener("load", adjustIframe);
     </script>  
-    <a href="videos.html">
-        <img src="https://tadabburbooks.com/cdn/shop/products/Omar_HanaSayAlhamdulillah-SamplePage-1.jpg?v=1653596752"> 
-    </a> 
-    
+
 </body>
 </html>
