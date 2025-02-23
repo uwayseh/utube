@@ -1,0 +1,45 @@
+css
+
+.iframe-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Custom Play Button Style */
+.play-button {
+    position: absolute;
+    top: 60%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: transparent;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Styling iframe */
+iframe {
+    z-index: 1;
+    border: none;
+    pointer-events: none;
+}
+
+.title{
+    color: blue;
+
+}
+
+img {
+    height:150px;
+    width:150px;
+}
+
+.arrow{
+    height: 80px;
+    width: 80px;
+}
