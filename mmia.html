@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <a href="./index.html">
+        <img src="https://static.vecteezy.com/system/resources/previews/006/991/685/non_2x/arrow-back-icon-which-is-suitable-for-commercial-work-and-easily-modify-or-edit-it-vector.jpg" alt="home button" class="arrow">
+    </a>
+    <div class="iframe-container">
+        <!-- YouTube iframe video -->
+        <iframe id="video" width="1200" height="800" 
+            src="https://www.youtube.com/embed/Qbu1vMZiQS8?autoplay=1&rel=1&modestbranding=1" 
+            frameborder="0" 
+            allow="autoplay; fullscreen">
+        </iframe>
+    
+        <!-- Custom Play Button -->
+        <button class="play-button" onclick="playVideo()"></button>
+    </div>
+    </iframe>
+    <script>
+        // Function to play the video when the custom play button is clicked
+        function playVideo() {
+            const iframe = document.getElementById("video");
+            const iframeSrc = iframe.src;
+    
+            // Reset the iframe's src to trigger autoplay
+            iframe.src = iframeSrc.replace("autoplay=1", "autoplay=1"); // Ensure autoplay is triggered
+        }
+    </script>  
+    <a href="videos.html">
+        <img src="https://tadabburbooks.com/cdn/shop/products/Omar_HanaSayAlhamdulillah-SamplePage-1.jpg?v=1653596752"> 
+    </a> 
+    
+</body>
+</html>
