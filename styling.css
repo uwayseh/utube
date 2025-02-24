@@ -1,4 +1,4 @@
-css
+cssgit
 
 .iframe-container {
     position: relative;
@@ -8,11 +8,11 @@ css
 /* Custom Play Button Style */
 .play-button {
     position: absolute;
-    top: 60%;
-    left: 32%;
+    top: 41%;
+    left: 13%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    background-color: transparent;
+    background-color: pink;
     padding: 20px 40px;
     border: none;
     border-radius: 5px;
